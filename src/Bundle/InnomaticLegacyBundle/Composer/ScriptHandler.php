@@ -14,7 +14,7 @@
 namespace Innomatic\Bundle\InnomaticLegacyBundle\Composer;
 
 use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler as DistributionBundleScriptHandler;
-use Composer\Script\CommandEvent;
+use Composer\Script\Event;
 
 class ScriptHandler extends DistributionBundleScriptHandler
 {
@@ -25,7 +25,7 @@ class ScriptHandler extends DistributionBundleScriptHandler
      *
      * @param $event CommandEvent A instance
      */
-    public static function installAssets(CommandEvent $event)
+    public static function installAssets(Event $event)
     {
         $options = self::getOptions($event);
         $appDir = $options['symfony-app-dir'];
